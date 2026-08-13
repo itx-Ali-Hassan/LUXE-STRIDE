@@ -1,0 +1,53 @@
+@use '../styles/tokens' as *;
+
+.luxe-footer {
+  background: $charcoal;
+  border-top: 1px solid $hairline;
+  padding-top: $sp-6;
+}
+
+.luxe-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem $sp-5;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: $sp-5;
+}
+
+.luxe-footer__brand {
+  h3 {
+    font-family: $font-display;
+    font-size: 1.4rem;
+    margin: 0 0 0.8rem;
+    span { color: $gold; }
+  }
+  p { color: $graphite; font-size: 0.88rem; max-width: 260px; }
+}
+
+.luxe-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  h6 {
+    color: $gold;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  a, p { color: $graphite; font-size: 0.86rem; margin: 0; }
+  a:hover { color: $ivory; }
+}
+
+.luxe-footer__bottom {
+  border-top: 1px solid $hairline;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  p { color: $graphite; font-size: 0.78rem; margin: 0; }
+}
+
+@media (max-width: 800px) {
+  .luxe-footer__inner { grid-template-columns: 1fr 1fr; }
+}

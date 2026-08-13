@@ -1,0 +1,119 @@
+@use './tokens' as *;
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: $obsidian;
+  color: $ivory;
+  font-family: $font-body;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: $font-display;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: $ivory;
+}
+
+a { color: inherit; text-decoration: none; }
+
+::selection { background: $gold-dim; color: $gold-bright; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: $obsidian; }
+::-webkit-scrollbar-thumb { background: $charcoal-2; border-radius: 8px; }
+
+.eyebrow {
+  font-family: $font-body;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: $gold;
+}
+
+.btn-luxe {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-2;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  border: 1px solid $gold;
+  color: $gold-bright;
+  font-family: $font-body;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: all 0.4s $ease-luxe;
+
+  &:hover {
+    background: $gold;
+    color: $obsidian;
+    box-shadow: 0 0 28px rgba(198, 161, 91, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    &:hover { background: transparent; color: $gold-bright; box-shadow: none; }
+  }
+}
+
+.btn-luxe-solid {
+  @extend .btn-luxe;
+  background: $gold;
+  color: $obsidian;
+  &:hover { background: $gold-bright; border-color: $gold-bright; }
+}
+
+.section-divider {
+  width: 64px;
+  height: 1px;
+  background: $gold;
+  margin: $sp-3 0;
+}
+
+// Scroll reveal
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s $ease-luxe, transform 0.9s $ease-luxe;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Glass panel used across auth / checkout
+.glass-panel {
+  background: linear-gradient(160deg, rgba(31,31,38,0.65), rgba(11,11,13,0.75));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(244,241,234,0.12);
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.form-luxe {
+  .ant-input, .ant-input-affix-wrapper, .ant-input-password, .ant-select-selector, .ant-input-number {
+    background: rgba(244,241,234,0.04) !important;
+    border: 1px solid rgba(244,241,234,0.16) !important;
+    color: $ivory !important;
+    border-radius: 6px !important;
+  }
+  .ant-input, input { color: $ivory !important; }
+  input::placeholder { color: $graphite !important; }
+  .ant-input-affix-wrapper .ant-input-suffix svg { color: $graphite; }
+  label { color: $graphite; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

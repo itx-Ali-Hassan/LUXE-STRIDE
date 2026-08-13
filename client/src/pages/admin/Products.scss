@@ -1,0 +1,54 @@
+@use '../../styles/tokens' as *;
+
+.admin-products__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $sp-4;
+
+  .btn-luxe-solid { display: flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.3rem; font-size: 0.75rem; }
+}
+
+.admin-table-wrap { padding: 0.5rem; overflow-x: auto; }
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    color: $graphite;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.8rem 0.9rem;
+    border-bottom: 1px solid $hairline;
+  }
+  td {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid $hairline;
+    font-size: 0.88rem;
+    color: $ivory;
+  }
+}
+
+.admin-thumb { width: 42px; height: 42px; object-fit: cover; border-radius: 6px; }
+
+.admin-table__actions {
+  display: flex;
+  gap: 0.6rem;
+  button {
+    background: none;
+    border: 1px solid $hairline;
+    color: $graphite;
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    &:hover { color: $gold; border-color: $gold; }
+    &.danger:hover { color: #d97757; border-color: #d97757; }
+  }
+}
+
+.admin-panel__empty { padding: 1.5rem; color: $graphite; text-align: center; }
+.admin-hint { color: $graphite; font-size: 0.78rem; margin-top: 0.4rem; }

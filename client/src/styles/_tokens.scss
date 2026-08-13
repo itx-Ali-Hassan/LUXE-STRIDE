@@ -1,0 +1,33 @@
+// ==========================================================================
+// LuxeStride — Design Tokens
+// Palette: obsidian ground, warm brass accent, ivory type. No bright colors.
+// ==========================================================================
+
+// Color
+$obsidian:      #0B0B0D;   // primary background
+$charcoal:      #17171C;   // surface / cards
+$charcoal-2:    #1F1F26;   // elevated surface
+$hairline:      rgba(244, 241, 234, 0.09);
+$ivory:         #F4F1EA;   // primary text on dark
+$graphite:      #8C8C93;   // secondary text
+$gold:          #C6A15B;   // accent - brass/gold
+$gold-bright:   #E4C382;   // accent hover / highlight
+$gold-dim:      rgba(198, 161, 91, 0.16);
+
+// Type
+$font-display: 'Cormorant Garamond', serif;
+$font-body: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+
+// Spacing scale
+$sp-1: 0.4rem;
+$sp-2: 0.8rem;
+$sp-3: 1.6rem;
+$sp-4: 2.4rem;
+$sp-5: 4rem;
+$sp-6: 6.4rem;
+$sp-7: 9.6rem;
+
+// Radius / motion
+$radius-sm: 4px;
+$radius-md: 10px;
+$ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);

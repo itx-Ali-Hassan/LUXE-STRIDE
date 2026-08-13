@@ -1,0 +1,4 @@
+@use '../../styles/tokens' as *;
+
+.admin-orders__count { color: $graphite; margin-bottom: $sp-4; margin-top: 0.2rem; }
+.admin-orders__email { color: $graphite; font-size: 0.76rem; }

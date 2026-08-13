@@ -1,0 +1,14 @@
+@use '../../styles/tokens' as *;
+
+.admin-users__count { color: $graphite; margin-bottom: $sp-4; margin-top: 0.2rem; }
+
+.admin-users__delete {
+  background: none;
+  border: 1px solid $hairline;
+  color: $graphite;
+  font-size: 0.76rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  &:hover { color: #d97757; border-color: #d97757; }
+}

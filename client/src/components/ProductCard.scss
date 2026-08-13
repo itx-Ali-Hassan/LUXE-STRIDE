@@ -1,0 +1,106 @@
+@use '../styles/tokens' as *;
+
+.product-card {
+  display: block;
+  background: $charcoal;
+  border: 1px solid $hairline;
+  border-radius: $radius-md;
+  overflow: hidden;
+  transition: transform 0.45s $ease-luxe, border-color 0.45s $ease-luxe, box-shadow 0.45s $ease-luxe;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(198,161,91,0.4);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.45);
+
+    .product-card__image-wrap img { transform: scale(1.06); }
+  }
+}
+
+.product-card__image-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: $charcoal-2;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s $ease-luxe;
+  }
+}
+
+.product-card__fav {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(244,241,234,0.2);
+  background: rgba(11,11,13,0.55);
+  backdrop-filter: blur(6px);
+  color: $ivory;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover { border-color: $gold; color: $gold; }
+  &.is-liked { color: $gold; border-color: $gold; background: rgba(198,161,91,0.15); }
+}
+
+.product-card__soldout {
+  position: absolute;
+  bottom: 12px; left: 12px;
+  background: rgba(11,11,13,0.75);
+  border: 1px solid $hairline;
+  color: $graphite;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.product-card__body { padding: 1.1rem 1.2rem 1.3rem; }
+
+.product-card__category {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $gold;
+  margin: 0 0 0.3rem;
+}
+
+.product-card__name {
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+}
+
+.product-card__desc {
+  color: $graphite;
+  font-size: 0.82rem;
+  margin: 0 0 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.product-card__price {
+  font-family: $font-display;
+  font-size: 1.25rem;
+  color: $ivory;
+}
+
+.product-card__add {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.68rem;
+}
+

@@ -1,0 +1,54 @@
+@use '../styles/tokens' as *;
+
+.products-page { max-width: 1280px; margin: 0 auto; padding: $sp-5 2rem $sp-7; }
+
+.products-hero {
+  text-align: center;
+  margin-bottom: $sp-5;
+  h1 { font-size: 2.4rem; margin: 0.4rem 0; }
+  p { color: $graphite; }
+}
+
+.products-toolbar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: $sp-5;
+
+  .ant-input-affix-wrapper, .ant-select { min-width: 200px; }
+  .ant-input-affix-wrapper {
+    background: $charcoal !important;
+    border: 1px solid $hairline !important;
+  }
+  .ant-input { background: transparent !important; color: $ivory !important; }
+  .ant-select-selector {
+    background: $charcoal !important;
+    border: 1px solid $hairline !important;
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.products-empty {
+  text-align: center;
+  color: $graphite;
+  padding: $sp-6 0;
+}
+
+.products-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: $sp-5;
+}
+
+@media (max-width: 900px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .products-grid { grid-template-columns: 1fr; }
+}

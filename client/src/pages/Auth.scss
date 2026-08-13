@@ -1,0 +1,112 @@
+@use '../styles/tokens' as *;
+
+.auth-page {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $sp-5 1.5rem;
+  overflow: hidden;
+}
+
+// soft moving gold glow behind the glass card — kept subtle, not shiny
+.auth-page__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    //radial-gradient(circle at 20% 20%, rgba(198,161,91,0.14), transparent 45%),
+    //radial-gradient(circle at 80% 75%, rgba(198,161,91,0.10), transparent 40%);
+    linear-gradient(180deg, rgba(16,16,18,0.75), rgba(16,16,18,0.92)),
+    url('../assets/shoes1.jpg') center/cover fixed;
+  pointer-events: none;
+}
+
+.auth-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 2.6rem 2.4rem;
+  text-align: center;
+
+  h1 { font-size: 1.9rem; margin: 0.3rem 0 0.4rem; }
+}
+
+.auth-card__sub {
+  color: $graphite;
+  font-size: 0.88rem;
+  margin-bottom: $sp-4;
+}
+
+.auth-card form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.7rem;
+  }
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(244,241,234,0.04);
+  border: 1px solid rgba(244,241,234,0.16);
+  border-radius: 6px;
+  padding: 0.65rem 0.8rem;
+
+  svg { color: $graphite; flex-shrink: 0; }
+
+  .password-toggle {
+    color: $graphite;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+    animation: fadeIn 0.2s ease;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $ivory;
+    width: 100%;
+    font-family: $font-body;
+    font-size: 0.92rem;
+  }
+  input::placeholder { color: $graphite; }
+
+  &:focus-within { border-color: $gold; }
+}
+
+.auth-submit { margin-top: $sp-3; width: 100%; justify-content: center; }
+
+.auth-card__switch {
+  margin-top: $sp-4;
+  color: $graphite;
+  font-size: 0.85rem;
+  a { color: $gold-bright; }
+  a:hover { text-decoration: underline; }
+}

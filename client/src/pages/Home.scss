@@ -1,0 +1,114 @@
+@use '../styles/tokens' as *;
+
+.home-hero {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  overflow: hidden;
+}
+
+.home-hero__glow {
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(198,161,91,0.16), transparent 65%);
+  pointer-events: none;
+}
+
+.home-hero__content {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+
+  h1 {
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1.05;
+    margin: 0.6rem 0 1.2rem;
+    em { color: $gold; font-style: italic; }
+  }
+  p {
+    color: $graphite;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+  }
+}
+
+.home-hero__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.home-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $sp-6 2rem;
+}
+
+.home-section__head {
+  text-align: center;
+  margin-bottom: $sp-5;
+  h2 { font-size: 2.2rem; margin: 0.4rem 0; }
+  .section-divider { margin: 0.8rem auto 0; }
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.home-section__more {
+  text-align: center;
+  margin-top: $sp-5;
+}
+
+.home-empty {
+  text-align: center;
+  color: $graphite;
+  padding: $sp-5 0;
+}
+
+.home-values {
+  border-top: 1px solid $hairline;
+  border-bottom: 1px solid $hairline;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.home-values__item {
+  padding: $sp-5 2.2rem;
+  border-right: 1px solid $hairline;
+  &:last-child { border-right: none; }
+
+  .home-values__num {
+    font-family: $font-display;
+    color: $gold;
+    font-size: 1.1rem;
+  }
+  h4 { margin: 0.6rem 0 0.4rem; font-size: 1.15rem; }
+  p { color: $graphite; font-size: 0.88rem; line-height: 1.6; margin: 0; }
+}
+
+.home-banner {
+  text-align: center;
+  padding: $sp-7 2rem;
+  h2 { font-size: 2rem; margin-bottom: 0.6rem; }
+  p { color: $graphite; margin-bottom: 1.8rem; }
+}
+
+@media (max-width: 900px) {
+  .home-grid { grid-template-columns: repeat(2, 1fr); }
+  .home-values { grid-template-columns: 1fr; }
+  .home-values__item { border-right: none; border-bottom: 1px solid $hairline; }
+}
+@media (max-width: 560px) {
+  .home-grid { grid-template-columns: 1fr; }
+}
